@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Gokul ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#05030a;
+    color:white;
+    font-family:Georgia, serif;
+    overflow-x:hidden;
+}
+
+/* ---------- STARS ---------- */
+
+.stars{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.2}
+    to{opacity:1}
+}
+
+/* ---------- COMMON ---------- */
+
+section{
+    min-height:100vh;
+    position:relative;
+    z-index:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:30px 20px;
+}
+
+.container{
+    width:100%;
+    max-width:750px;
+}
+
+h1{
+    font-size:clamp(42px,11vw,80px);
+}
+
+h2{
+    font-size:clamp(30px,8vw,55px);
+}
+
+p{
+    font-family:"Segoe UI",sans-serif;
+    line-height:1.8;
+    color:#eadce5;
+}
+
+button{
+    border:0;
+    border-radius:50px;
+    padding:16px 30px;
+    margin-top:25px;
+    font-size:17px;
+    cursor:pointer;
+    background:#d94670;
+    color:white;
+    box-shadow:0 0 30px #d9467066;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+}
+
+/* ---------- INTRO ---------- */
+
+#intro{
+    background:radial-gradient(circle at center,#26122c,#05030a 65%);
+}
+
+.moon{
+    width:120px;
+    height:120px;
+    background:#fff5d6;
+    border-radius:50%;
+    margin:0 auto 30px;
+    box-shadow:0 0 50px #fff0b855;
+}
+
+.subtitle{
+    margin-top:20px;
+    font-size:18px;
+}
+
+.name-input{
+    margin-top:30px;
+    padding:16px 22px;
+    width:min(90%,320px);
+    border-radius:30px;
+    border:1px solid #ffffff44;
+    outline:none;
+    background:#ffffff0d;
+    color:white;
+    text-align:center;
+    font-size:18px;
+}
+
+.error{
+    color:#ff7f9e;
+    margin-top:12px;
+    display:none;
+}
+
+/* ---------- ENVELOPE ---------- */
+
+#letter{
+    background:radial-gradient(circle,#321329,#08040c);
+}
+
+.envelope{
+    width:min(90vw,420px);
+    height:270px;
+    background:#8e3150;
+    margin:35px auto;
+    position:relative;
+    border-radius:10px;
+    cursor:pointer;
+    box-shadow:0 20px 60px #000;
+}
+
+.envelope:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:#a83e5f;
+    clip-path:polygon(0 0,50% 58%,100% 0);
+    z-index:3;
+    transition:.8s;
+    transform-origin:top;
+}
+
+.envelope.open:before{
+    transform:rotateX(180deg);
+}
+
+.letter-paper{
+    position:absolute;
+    width:85%;
+    height:230px;
+    background:#fff8ed;
+    color:#482631;
+    left:7.5%;
+    top:20px;
+    padding:25px 18px;
+    border-radius:5px;
+    transform:translateY(0);
+    transition:1s;
+    z-index:2;
+    overflow:hidden;
+}
+
+.envelope.open .letter-paper{
+    transform:translateY(-150px);
+}
+
+.letter-paper h3{
+    margin-bottom:15px;
+}
+
+.letter-paper p{
+    color:#482631;
+    font-size:14px;
+}
+
+/* ---------- STORY ---------- */
+
+#story{
+    background:#0c0710;
+}
+
+.story-text{
+    margin:25px auto;
+    max-width:600px;
+}
+
+.coffee{
+    font-size:70px;
+    margin-bottom:15px;
+}
+
+/* ---------- PHOTOS ---------- */
+
+#memories{
+    background:radial-gradient(circle,#25101b,#07040a);
+}
+
+.gallery{
+    margin-top:35px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.polaroid{
+    background:#fff;
+    padding:10px 10px 30px;
+    transform:rotate(-3deg);
+    box-shadow:0 15px 30px #0008;
+    transition:.4s;
+}
+
+.polaroid:nth-child(even){
+    transform:rotate(4deg);
+}
+
+.polaroid:hover{
+    transform:rotate(0) scale(1.05);
+}
+
+.polaroid img{
+    width:70%;
+    height:220px;
+    object-fit:cover;
+}
+
+.caption{
+    color:#222;
+    font-family:cursive;
+    margin-top:10px;
+    font-size:16px;
+}
+
+/* ---------- LOVE MESSAGE ---------- */
+
+#message{
+    background:radial-gradient(circle,#351126,#07030a);
+}
+
+.heart{
+    font-size:100px;
+    animation:heartbeat 1.2s infinite;
+    filter:drop-shadow(0 0 25px #ff4677);
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1)}
+    15%{transform:scale(1.18)}
+    30%{transform:scale(1)}
+    45%{transform:scale(1.12)}
+}
+
+.typing{
+    margin-top:30px;
+    min-height:110px;
+}
+
+/* ---------- PROPOSAL ---------- */
+
+#proposal{
+    background:
+    radial-gradient(circle at center,#591b36,#07030a 70%);
+}
+
+.proposal-text{
+    margin-top:25px;
+    font-size:20px;
+}
+
+.choice{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.yes{
+    background:#e83e70;
+}
+
+.always{
+    background:#8e3150;
+}
+
+/* ---------- FINAL ---------- */
+
+#final{
+    display:none;
+    background:
+    radial-gradient(circle,#7b2348,#10030a 70%);
+}
+
+.final-title{
+    color:#ff9bb8;
+    text-shadow:0 0 30px #ff4677;
+}
+
+.final-name{
+    margin-top:20px;
+    font-size:22px;
+}
+
+.signature{
+    margin-top:35px;
+    font-family:cursive;
+    font-size:24px;
+    color:#ff9db8;
+}
+
+/* ---------- FLOATING HEARTS ---------- */
+
+.floating-heart{
+    position:fixed;
+    bottom:-30px;
+    z-index:10;
+    pointer-events:none;
+    animation:floatUp 5s linear forwards;
+}
+
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) rotate(0);
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:600px){
+
+    .gallery{
+        gap:12px;
+    }
+
+    .polaroid{
+        padding:7px 7px 22px;
+    }
+
+    .polaroid img{
+        height:180px;
+    }
+
+    .envelope{
+        height:240px;
+    }
+
+    .letter-paper{
+        height:205px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+
+
+<!-- INTRO -->
+
+<section id="intro">
+
+<div class="container">
+
+<div class="moon"></div>
+
+<h1>Hey Gokul...</h1>
+
+<p class="subtitle">
+Someone has a little secret message for you. 🌙
+</p>
+
+<input
+id="nameInput"
+class="name-input"
+placeholder="Enter your name..."
+autocomplete="off">
+
+<br>
+
+<button onclick="unlock()">
+Open Your Surprise 💌
+</button>
+
+<div class="error" id="error">
+Hmm... I think you're not Gokul 😌❤️
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LETTER -->
+
+<section id="letter">
+
+<div class="container">
+
+<h2>A Letter For You 💌</h2>
+
+<p style="margin-top:15px">
+Click the envelope...
+</p>
+
+<div class="envelope" id="envelope" onclick="openLetter()">
+
+<div class="letter-paper">
+
+<h3>Dear Gokul ❤️</h3>
+
+<p>
+I don't know exactly when it happened...
+but somewhere between our conversations,
+our laughs and our little moments,
+you became someone very special to me.
+</p>
+
+<br>
+
+<p>
+And there is something
+I've been wanting to tell you...
+</p>
+
+</div>
+
+</div>
+
+<p id="letterHint">
+Tap the envelope 💌
+</p>
+
+</div>
+
+</section>
+
+
+<!-- STORY -->
+
+<section id="story">
+
+<div class="container">
+
+<div class="coffee">☕</div>
+
+<h2>It Started With A Coffee...</h2>
+
+<p class="story-text">
+Our first meet was in a coffee shop.
+
+At that moment,
+I didn't know that a simple meeting
+would become the beginning of
+so many beautiful memories.
+
+Sometimes the smallest moments
+create the biggest stories. ❤️
+</p>
+
+<button onclick="goTo('memories')">
+See Our Memories 📸
+</button>
+
+</div>
+
+</section>
+
+
+<!-- MEMORIES -->
+
+<section id="memories">
+
+<div class="container">
+
+<h2>Our Little Memories 📸</h2>
+
+<p style="margin-top:15px">
+Every picture holds a little piece of us.
+</p>
+
+<div class="gallery">
+
+<div class="polaroid">
+<img src="first.jpeg">
+<div class="caption">That smile ❤️</div>
+</div>
+
+<div class="polaroid">
+<img src="second.jpeg">
+<div class="caption">My favourite person</div>
+</div>
+
+<div class="polaroid">
+<img src="third.jpeg">
+<div class="caption">Little moments ✨</div>
+</div>
+
+<div class="polaroid">
+<img src="fouth.jpeg">
+<div class="caption">Us 🫶</div>
+</div>
+
+<div class="polaroid">
+<img src="fivth.jpeg">
+<div class="caption">Forever memory</div>
+</div>
+
+<div class="polaroid">
+<img src="sixth.jpeg">
+<div class="caption">More to come ❤️</div>
+</div>
+
+</div>
+
+<button onclick="goTo('message')">
+One Last Thing...
+</button>
+
+</div>
+
+</section>
+
+
+<!-- MESSAGE -->
+
+<section id="message">
+
+<div class="container">
+
+<div class="heart">❤️</div>
+
+<h2>Gokul...</h2>
+
+<div class="typing" id="typing"></div>
+
+<button onclick="goTo('proposal')">
+Keep Reading 💕
+</button>
+
+</div>
+
+</section>
+
+
+<!-- PROPOSAL -->
+
+<section id="proposal">
+
+<div class="container">
+
+<h2>One Question... 🥺</h2>
+
+<p class="proposal-text">
+
+I don't promise that every day will be perfect.
+
+But I promise I'll appreciate
+the little things.
+
+I'll laugh with you.
+I'll annoy you.
+I'll support you.
+I'll make memories with you.
+
+And most importantly...
+
+I'll choose you,
+again and again. ❤️
+
+</p>
+
+<h2 style="margin-top:35px">
+Will you be my forever?
+</h2>
+
+<div class="choice">
+
+<button class="yes" onclick="sayYes()">
+YES ❤️
+</button>
+
+<button class="always" onclick="sayYes()">
+OF COURSE 🥺
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FINAL -->
+
+<section id="final">
+
+<div class="container">
+
+<div class="heart">💖</div>
+
+<h1 class="final-title">
+I LOVE YOU, GOKUL
+</h1>
+
+<p class="final-name">
+Gokul × Gokizzz ❤️
+</p>
+
+<p style="margin-top:30px">
+
+From one coffee shop meeting
+to countless memories...
+
+our story is only beginning. ✨
+
+</p>
+
+<p class="signature">
+Forever yours,<br>
+Gokizzz 💕
+</p>
+
+</div>
+
+</section>
+
+
+<audio id="music" loop>
+<source src="songs.mpeg" type="audio/mpeg">
+</audio>
+
+
+<script>
+
+/* ---------- STARS ---------- */
+
+const stars = document.getElementById("stars");
+
+for(let i=0;i<140;i++){
+
+    const star=document.createElement("div");
+
+    star.className="star";
+
+    star.style.left=Math.random()*100+"%";
+    star.style.top=Math.random()*100+"%";
+
+    star.style.animationDelay=
+        Math.random()*2+"s";
+
+    star.style.opacity=
+        Math.random();
+
+    stars.appendChild(star);
+}
+
+
+/* ---------- UNLOCK ---------- */
+
+function unlock(){
+
+    const name=
+        document.getElementById("nameInput")
+        .value
+        .trim()
+        .toLowerCase();
+
+    if(name==="gokul"){
+
+        document.getElementById("error")
+        .style.display="none";
+
+        document.getElementById("music")
+        .play()
+        .catch(()=>{});
+
+        goTo("letter");
+
+        startHearts();
+
+    }else{
+
+        document.getElementById("error")
+        .style.display="block";
+
+    }
+}
+
+
+/* ---------- ENVELOPE ---------- */
+
+function openLetter(){
+
+    const envelope=
+        document.getElementById("envelope");
+
+    envelope.classList.add("open");
+
+    document.getElementById("letterHint")
+    .innerHTML="Read it slowly... ❤️";
+
+}
+
+
+/* ---------- SCROLL ---------- */
+
+function goTo(id){
+
+    document.getElementById(id)
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* ---------- TYPING ---------- */
+
+const message =
+"Somewhere along the way, you became my favourite notification, my favourite conversation, my favourite person... and now, my favourite part of life. ❤️";
+
+let index=0;
+
+function typeText(){
+
+    const box=
+        document.getElementById("typing");
+
+    if(index < message.length){
+
+        box.innerHTML += message.charAt(index);
+
+        index++;
+
+        setTimeout(typeText,35);
+
+    }
+
+}
+
+setTimeout(typeText,1200);
+
+
+/* ---------- YES ---------- */
+
+function sayYes(){
+
+    goTo("final");
+
+    document.getElementById("final")
+    .style.display="flex";
+
+    for(let i=0;i<70;i++){
+
+        setTimeout(
+            createHeart,
+            i*70
+        );
+
+    }
+
+}
+
+
+/* ---------- HEARTS ---------- */
+
+function createHeart(){
+
+    const heart=
+        document.createElement("div");
+
+    heart.className="floating-heart";
+
+    const emojis=[
+        "❤️",
+        "💖",
+        "💕",
+        "💗",
+        "💘",
+        "💝",
+        "✨"
+    ];
+
+    heart.innerHTML=
+        emojis[
+            Math.floor(
+                Math.random()*emojis.length
+            )
+        ];
+
+    heart.style.left=
+        Math.random()*100+"vw";
+
+    heart.style.fontSize=
+        15+Math.random()*30+"px";
+
+    heart.style.animationDuration=
+        3+Math.random()*4+"s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },7000);
+
+}
+
+
+/* ---------- CONTINUOUS HEARTS ---------- */
+
+function startHearts(){
+
+    setInterval(()=>{
+
+        if(Math.random()>.4){
+            createHeart();
+        }
+
+    },1000);
+
+}
+
+</script>
+
+</body>
+</html>
